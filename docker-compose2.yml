@@ -1,0 +1,43 @@
+services:
+  web:
+    container_name: personality_analysis_app
+    image: samshad/mindful-eating  # You can replace this with the actual image name or use build separately
+    env_file:
+      - .env
+    ports:
+      - "11444:11441"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/personality_analysis
+      - SECRET_KEY={}
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+    # command: "sh -c 'while true; do ping host.docker.internal; sleep 5; done'"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - sam-network
+
+#  db:
+#    container_name: personality_analysis_db
+#    image: postgres:15
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      POSTGRES_USER: postgres
+#      POSTGRES_PASSWORD: postgres
+#      POSTGRES_DB: personality_analysis
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+#    restart: always
+#    networks:
+#      - sam-network
+#
+#volumes:
+#  postgres_data:
+
+networks:
+  sam-network:
