@@ -53,3 +53,5 @@ Thumbs.db
 Images
 .venv
 .ruff_cache
+
+README.md

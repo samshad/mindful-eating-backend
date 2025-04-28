@@ -100,7 +100,7 @@ def forget_password(
 
 
 @router.post("/password-reset", response_model=dict)
-def forget_password(
+def password_reset(
     password_reset_request: PasswordResetRequest,
     db: Session = Depends(get_db),
 ):
