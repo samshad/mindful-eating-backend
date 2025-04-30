@@ -11,8 +11,8 @@ services:
 #    depends_on:
 #      - db
     environment:
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/personality_analysis
-      - SECRET_KEY={}
+#      - DATABASE_URL=postgresql://postgres:postgres@db:5432/personality_analysis
+      - SECRET_KEY="your_secret_key"
       - ALGORITHM=HS256
       - ACCESS_TOKEN_EXPIRE_MINUTES=30
     # command: "sh -c 'while true; do ping host.docker.internal; sleep 5; done'"

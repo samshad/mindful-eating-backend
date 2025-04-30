@@ -111,7 +111,12 @@ def store_tips(user_id, tips_text, db):
         db.commit()
         logger.info(f"Tip updated for user {user_id} on {today}.")
     else:
-        new_tip = UserTips(user_id=user_id, tips_text=tips_text)
+        # new_tip = UserTips(user_id=user_id, tips_text=tips_text)
+        new_tip = UserTips(
+            user_id=user_id,
+            tips_text=tips_text,
+            created_at=datetime.now()
+        )
         db.add(new_tip)
         db.commit()
         logger.info(f"New tip stored for user {user_id} on {today}.")

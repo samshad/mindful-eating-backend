@@ -38,7 +38,12 @@ def create_or_update_user_tips(payload: CreateUserTipsRequest, db: Session, user
             db.commit()
             message = "User tips updated successfully"
         else:
-            new_tip = UserTips(user_id=user.id, tips_text=payload.tips_text)
+            # new_tip = UserTips(user_id=user.id, tips_text=payload.tips_text)
+            new_tip = UserTips(
+                user_id=user.id,
+                tips_text=payload.tips_text,
+                created_at=datetime.now()
+            )
             db.add(new_tip)
             db.commit()
             message = "User tips created successfully"
