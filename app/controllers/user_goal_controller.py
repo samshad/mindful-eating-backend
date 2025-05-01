@@ -8,6 +8,7 @@ from app.models.goal import UserGoal
 from app.schemas.goal import CreateUserGoalRequest
 from app.services.big_five_generator import generate_user_big_five_traits
 from app.services.tips_generator import generate_user_tips
+from app.utils.get_current_time import get_current_time
 
 # Configure logger
 logger = logging.getLogger(__name__)
@@ -44,7 +45,7 @@ def create_or_update_user_goal(
             logger.info(f"Updated goal for user {user.id} for today.")
         else:
             new_goal = UserGoal(
-                user_id=user.id, goal_text=payload.goal_text, created_at=datetime.now()
+                user_id=user.id, goal_text=payload.goal_text, created_at=get_current_time()
             )
             db.add(new_goal)
             logger.info(f"Created new goal for user {user.id} for today.")

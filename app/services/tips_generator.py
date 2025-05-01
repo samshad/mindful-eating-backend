@@ -5,6 +5,7 @@ from datetime import datetime, date
 from sqlalchemy.exc import SQLAlchemyError
 from app.models import UserBehavior, BigFiveTraits, FoodUpdate, UserGoal, UserTips
 from app.services.ollama_service import generate_result
+from app.utils.get_current_time import get_current_time
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -115,7 +116,7 @@ def store_tips(user_id, tips_text, db):
         new_tip = UserTips(
             user_id=user_id,
             tips_text=tips_text,
-            created_at=datetime.now()
+            created_at=get_current_time()
         )
         db.add(new_tip)
         db.commit()

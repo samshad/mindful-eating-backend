@@ -7,6 +7,7 @@ from fastapi import HTTPException
 
 from app.models import User, FoodUpdate, FoodImage
 from app.schemas.food_update import FoodUpdatePayload
+from app.utils.get_current_time import get_current_time
 
 # Directories for image uploads
 UPLOAD_DIR = Path("Images/Food Images")
@@ -31,7 +32,7 @@ def post_food_update_controller(
     food_update_record = FoodUpdate(
         user_id=current_user.id,
         description=food_update.description,
-        created_at=datetime.now(),
+        created_at=get_current_time(),
     )
     db.add(food_update_record)
     db.commit()

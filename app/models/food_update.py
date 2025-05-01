@@ -2,6 +2,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Text, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from app.models import Base
+from app.utils.get_current_time import get_current_time
 
 
 class FoodUpdate(Base):
@@ -10,7 +11,7 @@ class FoodUpdate(Base):
     id = Column(Integer, primary_key=True, index=True)
     user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     description = Column(Text, nullable=True)
-    created_at = Column(DateTime, default=datetime.now())
+    created_at = Column(DateTime, default=get_current_time())
 
     user = relationship("User", back_populates="food_updates")
     images = relationship(

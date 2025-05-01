@@ -5,11 +5,14 @@ from datetime import datetime, timedelta
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from pathlib import Path
+from jose import JWTError, jwt
+from app.database import settings
 from app.models.user import User
 from app.models.otp import OTP
 from app.schemas.user import UserCreate, UserUpdate, UploadProfilePicture
-from app.utils.auth import hash_password, verify_password, create_access_token
+from app.utils.auth import hash_password, verify_password
 from app.utils.email import send_email
+from app.utils.get_current_time import get_current_time
 
 UPLOAD_DIR = Path("Images/Profile Image")
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
@@ -70,6 +73,21 @@ def register_user_controller(user: UserCreate, db: Session):
             "last_name": new_user.last_name,
         },
     }
+
+
+def create_access_token(data: dict, expires_delta: timedelta = None):
+    to_encode = data.copy()
+
+    # Use UTC to prevent issues with container/system timezone
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=settings.access_token_expire_minutes)
+
+    to_encode.update({"exp": expire})
+
+    encoded_jwt = jwt.encode(to_encode, settings.secret_key, algorithm=settings.algorithm)
+    return encoded_jwt
 
 
 def login_user_controller(email: str, password: str, db: Session) -> dict:
@@ -315,7 +333,7 @@ def forget_password_controller(email: str, db: Session):
         )
 
     otp_code = generate_otp()
-    otp_expiry = datetime.now() + timedelta(minutes=10)
+    otp_expiry = get_current_time() + timedelta(minutes=10)
 
     # Store OTP in the database
     otp_entry = OTP(email=email, otp_code=otp_code, expires_at=otp_expiry)
@@ -342,7 +360,7 @@ def reset_password_controller(
         db.query(OTP).filter(OTP.email == email, OTP.otp_code == otp_code).first()
     )
 
-    if not otp_entry or otp_entry.expires_at < datetime.now():
+    if not otp_entry or otp_entry.expires_at < get_current_time():
         raise HTTPException(
             status_code=400,
             detail={"lang": "en", "message": "Invalid or expired OTP", "data": {}},

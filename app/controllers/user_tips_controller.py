@@ -7,6 +7,7 @@ from sqlalchemy.orm import Session
 from app.models.tips import UserTips
 from app.schemas.tips import CreateUserTipsRequest
 from app.services.tips_generator import generate_user_tips
+from app.utils.get_current_time import get_current_time
 
 load_dotenv()
 
@@ -42,7 +43,7 @@ def create_or_update_user_tips(payload: CreateUserTipsRequest, db: Session, user
             new_tip = UserTips(
                 user_id=user.id,
                 tips_text=payload.tips_text,
-                created_at=datetime.now()
+                created_at=get_current_time()
             )
             db.add(new_tip)
             db.commit()

@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 from app.database import settings
 from app.models.user import User
 from app.database import get_db
+from app.utils.get_current_time import get_current_time
 
 # Set up the password hashing context using bcrypt algorithm
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -58,9 +59,9 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
 
     # Set the expiration time for the token
     if expires_delta:
-        expire = datetime.now() + expires_delta
+        expire = get_current_time() + expires_delta
     else:
-        expire = datetime.now() + timedelta(
+        expire = get_current_time() + timedelta(
             minutes=settings.access_token_expire_minutes
         )
 
