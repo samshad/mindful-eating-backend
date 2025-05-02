@@ -88,7 +88,7 @@ TIPS_GENERATOR_MODEL=samshad/mindful-tips
 ### Database migrations
 Run the following command to apply database migrations:
 ```bash
-  alembic upgrade head
+alembic upgrade head
 ```
 
 
