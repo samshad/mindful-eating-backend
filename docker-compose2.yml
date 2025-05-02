@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: personality_analysis_app
+    container_name: mindful-eating-app
     image: samshad/mindful-eating  # You can replace this with the actual image name or use build separately
     env_file:
       - .env
