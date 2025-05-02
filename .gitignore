@@ -54,4 +54,5 @@ Images
 .venv
 .ruff_cache
 
-README.md
+docker-compose.yml
+docker-compose2.yml
