@@ -141,5 +141,8 @@ Contributions are welcome! Please follow these steps:
 - 🚀 Deploy on AWS ECS + RDS
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+This project is licensed under the GNU Affero General Public License v3.0.  
+See the [LICENSE](LICENSE) file for details.  
+© 2025 Md Samshad Rahman (Persuasive Computing Lab, Dalhousie University)
 
