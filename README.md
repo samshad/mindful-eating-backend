@@ -1,8 +1,8 @@
 # Mindful Eating Backend
 
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
-![License](https://img.shields.io/github/license/samshad/mindful-eating-backend)
+![License](https://img.shields.io/github/license/samshad/mindful-eating-frontend)
 ![Python](https://img.shields.io/badge/python-3.12-blue)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
 
 ## Overview
 The **Mindful Eating Backend** is a FastAPI‑powered service that blends behavioral data science with LLM.  
