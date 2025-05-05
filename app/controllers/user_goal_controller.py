@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------------
+# Project: Mindful Eating
+# Author: Md Samshad Rahman
+# Year: 2025
+# License: GNU Affero General Public License v3.0 (See LICENSE file for details)
+# Description: This file is part of the Mindful Eating project.
+# -----------------------------------------------------------------------------
 import logging
 from datetime import datetime, date
 from fastapi import HTTPException, BackgroundTasks
@@ -45,7 +52,9 @@ def create_or_update_user_goal(
             logger.info(f"Updated goal for user {user.id} for today.")
         else:
             new_goal = UserGoal(
-                user_id=user.id, goal_text=payload.goal_text, created_at=get_current_time()
+                user_id=user.id,
+                goal_text=payload.goal_text,
+                created_at=get_current_time(),
             )
             db.add(new_goal)
             logger.info(f"Created new goal for user {user.id} for today.")

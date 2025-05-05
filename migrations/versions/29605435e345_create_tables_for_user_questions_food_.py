@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------------
+# Project: Mindful Eating
+# Author: Md Samshad Rahman
+# Year: 2025
+# License: GNU Affero General Public License v3.0 (See LICENSE file for details)
+# Description: This file is part of the Mindful Eating project.
+# -----------------------------------------------------------------------------
 """Create tables for user, questions, food update and utp
 
 Revision ID: 29605435e345

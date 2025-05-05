@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------------
+# Project: Mindful Eating
+# Author: Md Samshad Rahman
+# Year: 2025
+# License: GNU Affero General Public License v3.0 (See LICENSE file for details)
+# Description: This file is part of the Mindful Eating project.
+# -----------------------------------------------------------------------------
 import re
 import os
 import logging
@@ -114,9 +121,7 @@ def store_tips(user_id, tips_text, db):
     else:
         # new_tip = UserTips(user_id=user_id, tips_text=tips_text)
         new_tip = UserTips(
-            user_id=user_id,
-            tips_text=tips_text,
-            created_at=get_current_time()
+            user_id=user_id, tips_text=tips_text, created_at=get_current_time()
         )
         db.add(new_tip)
         db.commit()
