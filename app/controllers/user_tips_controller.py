@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------------
+# Project: Mindful Eating
+# Author: Md Samshad Rahman
+# Year: 2025
+# License: GNU Affero General Public License v3.0 (See LICENSE file for details)
+# Description: This file is part of the Mindful Eating project.
+# -----------------------------------------------------------------------------
 import os
 import logging
 from datetime import datetime, date
@@ -43,7 +50,7 @@ def create_or_update_user_tips(payload: CreateUserTipsRequest, db: Session, user
             new_tip = UserTips(
                 user_id=user.id,
                 tips_text=payload.tips_text,
-                created_at=get_current_time()
+                created_at=get_current_time(),
             )
             db.add(new_tip)
             db.commit()

@@ -1,3 +1,10 @@
+# -----------------------------------------------------------------------------
+# Project: Mindful Eating
+# Author: Md Samshad Rahman
+# Year: 2025
+# License: GNU Affero General Public License v3.0 (See LICENSE file for details)
+# Description: This file is part of the Mindful Eating project.
+# -----------------------------------------------------------------------------
 import base64
 import random
 import string
@@ -82,11 +89,15 @@ def create_access_token(data: dict, expires_delta: timedelta = None):
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=settings.access_token_expire_minutes)
+        expire = datetime.utcnow() + timedelta(
+            minutes=settings.access_token_expire_minutes
+        )
 
     to_encode.update({"exp": expire})
 
-    encoded_jwt = jwt.encode(to_encode, settings.secret_key, algorithm=settings.algorithm)
+    encoded_jwt = jwt.encode(
+        to_encode, settings.secret_key, algorithm=settings.algorithm
+    )
     return encoded_jwt
 
 
