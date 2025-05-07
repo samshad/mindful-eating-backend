@@ -43,6 +43,8 @@ mindful-eating-backend/
 │   ├── schemas/         # Data validation
 │   ├── services/        # Services layer
 │   └── utils/           # Utility functions
+├── data/                # Datasets for the application
+├── scripts/             # Standalone utility scripts
 ├── migrations/          # Alembic migrations
 ├── main.py              # Application entry point
 ├── docker-compose.yml   # Docker configuration
@@ -128,6 +130,19 @@ Outlined below are a few key endpoints:
 - **Tips routes**: `/tips/*` endpoints for retrieving tips
 - **Food update routes**: `/food-update/*` endpoints for food tracking updates
 - **Big Five routes**: `/big-five/*` endpoints related to a "Big Five" feature (dominant personality assessment)
+
+## Scripts and Data
+The `scripts/` directory contains standalone utility scripts for tasks such as:
+- Data preprocessing
+- Model training
+- Model evaluation
+- Maintenance utilities
+
+The `data/` directory contains datasets used by the application, including:
+- Training data for AI models
+- Reference datasets for behavioral analysis
+- Test datasets for validation
+
 
 ## Contribution Guidelines
 Contributions are welcome! Please follow these steps:
