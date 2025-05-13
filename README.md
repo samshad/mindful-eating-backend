@@ -1,12 +1,31 @@
-# Mindful Eating Backend
+# Mindful Eating Backend🧘‍♀️🍲
 
-![License](https://img.shields.io/github/license/samshad/mindful-eating-frontend)
-![Python](https://img.shields.io/badge/python-3.12-blue)
-![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![License](https://img.shields.io/github/license/samshad/mindful-eating-backend)
+![Python](https://img.shields.io/badge/python-3.12-blue?style=flat)
+![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688.svg?style=flat&logo=FastAPI&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=flat&logo=PostgreSQL&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED.svg?style=flat&logo=Docker&logoColor=white)
+![LLaMA 3.2 Powered](https://img.shields.io/badge/LLaMA%203.2-Powered-blueviolet?style=flat)
 
 ## Overview
 The **Mindful Eating Backend** is a FastAPI‑powered service that blends behavioral data science with LLM.  
 It integrates personality‑driven recommendations via two fine‑tuned **LLama3.2** language models, using **Big Five personality traits** and **mindful‑eating behavior classifications** to deliver daily, personalized tips.
+
+This repository contains the backend for "A Personalized Digital Intervention for Promoting Mindful Eating Through Real-time Behavioral Analysis and Adaptive Feedback." This project, developed as a capstone project for my Master of Applied Computer Science at Dalhousie University, aims to help users cultivate healthier eating patterns by providing daily, personalized tips.
+
+The core innovation lies in leveraging Big Five personality traits and user-selected eating behaviors to generate adaptive feedback. I've fine-tuned two Large Language Models (LLMs): one to infer personality traits from user responses and another to generate customized mindful eating tips. The system is designed to move beyond generic advice, offering suggestions that resonate on a personal level.
+
+The backend is built with **Python, FastAPI, and PostgreSQL**, serving a [React Native Expo mobile application (Mindful Eating Frontend)](https://github.com/samshad/mindful-eating-frontend).
+
+## Project Aim
+
+Current nutrition and eating apps often provide generic, one-size-fits-all suggestions, leading to low user engagement and motivation. This project addresses this gap by developing an AI-powered mobile system that:
+
+*   Analyzes users' Big Five personality traits from questionnaires and eating habit descriptions.
+*   Generates daily, behavior-specific tips aligned with the user's dominant Big Five trait and chosen focus areas (e.g., emotional eating, portion control).
+*   Delivers these tips within a mobile application that encourages food logging, goal setting, and user reflection.
+*   Provides a direct chat interface with an LLM for real-time, personalized advice on eating behaviors.
 
 ## Features
 
@@ -51,7 +70,7 @@ mindful-eating-backend/
 └── requirements.txt     # Dependencies
 ```
 
-## System Design
+## System Architecture
 For a complete overview of the data flow, consult the diagrams below:
 ![System Architecture](./assets/system-architecture.png)
 ![Database Schema](./assets/db-schema.png)
@@ -142,7 +161,9 @@ The `data/` directory contains datasets used by the application, including:
 - Training data for AI models
 - Reference datasets for behavioral analysis
 - Test datasets for validation
-
+- Project report
+- Presentation slides
+- Postman collection
 
 ## Contribution Guidelines
 Contributions are welcome! Please follow these steps:
@@ -150,10 +171,15 @@ Contributions are welcome! Please follow these steps:
 2. Make your changes and test thoroughly.
 3. Submit a pull request with a clear description of the changes.
 
-## Roadmap
-- ✅ Prototype accuracy ≈ 88 % on tips model  
-- 🔄 Dataset validation with registered dietitian and psychologist  
-- 🚀 Deploy on AWS ECS + RDS
+## Acknowledgements
+
+This project was undertaken as a research project for my Master of Applied Computer Science program at Persuasive Computing Lab, Dalhousie University.
+
+**Supervisors:** Dr. Rita Orji & Dr. Oladapo Oyebode
+
+## Companion Frontend Application
+This backend serves the **Mindful Eating Frontend**, a mobile application built with React Native and Expo.
+- **Frontend Repository:** [samshad/mindful-eating-frontend](https://github.com/samshad/mindful-eating-frontend)
 
 ## License
 
