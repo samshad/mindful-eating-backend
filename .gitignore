@@ -54,5 +54,7 @@ Images
 .venv
 .ruff_cache
 
+# Docker files
+docker-compose.yml
 docker-compose2.yml
 docker-compose.override.yml
