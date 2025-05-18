@@ -71,7 +71,14 @@ mindful-eating-backend/
 ```
 
 ## System Architecture
-For a complete overview of the data flow, consult the diagrams below:
+For a complete overview of the data flow, consult the diagrams below:<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/system-architecture.png" alt="System Architecture" width="600"/>
+  <br/>
+  <em>Figure 1: System Architecture Overview</em>
+</p>
+
 ![System Architecture](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/system-architecture.png)
 ![Database Schema](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/db-schema.png)
 
