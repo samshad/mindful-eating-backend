@@ -85,8 +85,10 @@ For a complete overview of the data flow, consult the diagrams below:<br>
   <em>Figure 2: Database Schema</em>
 </p>
 
-[//]: # ![System Architecture](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/system-architecture.png)
-[//]: # ![Database Schema](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/db-schema.png)
+<!---
+![System Architecture](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/system-architecture.png)
+![Database Schema](https://raw.githubusercontent.com/samshad/mindful-eating-backend/refs/heads/master/assets/db-schema.png)
+--->
 
 ## Setup and Installation
 1. Clone the repository:
